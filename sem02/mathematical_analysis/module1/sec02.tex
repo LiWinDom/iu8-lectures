@@ -1,0 +1,89 @@
+\section{Интегрирование}
+
+\subsection{Интегрирование подстановкой}
+
+\begin{theorem}
+\textbf{Интегрирование подстановкой} \\
+\textit{
+  $x = \phi(t)$ определена и диффиринцируема на промежутке $I_1$ \\
+  $y = f(x)$ определенна на промежутке $I_2$ \\
+  $\phi(t) \in I_2 \quad \forall t \in I_1$
+} \\
+$\displaystyle\int f(x)\,dx = F(x) + C$ на $I_1$ $\implies$ $\displaystyle\int f(\phi(t))\phi'(t)dt = F(\phi(t)) + C$ на $I_2$
+\end{theorem}
+\begin{corollary}
+$$\int f(ax)\,dx = \frac{1}{a}\int f(ax)\,d(ax) = \frac{1}{a}F(ax) + C$$
+$$\int f(x + b)\,dx = \int f(x + b)\,d(x + b) = F(x + b) + C$$
+$$\int f(ax + b)\,dx = \frac{1}{a}\int f(ax + b)\,d(ax + b) = \frac{1}{a}F(ax + b) + C$$
+\end{corollary}
+
+\begin{eg}
+$\fbox{$\displaystyle\int sin(5x + 3)\,dx$} = \displaystyle\frac{1}{5}\int sin(5x + 3)\,d(5x + 3) = \fbox{$-\displaystyle\frac{1}{5}cos(5x + 3) + C$}$
+\end{eg}
+
+\begin{eg}
+$\fbox{$\displaystyle\int cos^2x\,dx$} = \int \frac{1}{2}\left(cos2x + 1\right)\,dx = \displaystyle\frac{1}{2}\left(\int cos(2x)\,dx + \int dx\right) = \fbox{$\displaystyle\frac{1}{2}\left(\frac{1}{2}sin2x + x\right) + C$}$
+\end{eg}
+
+\subsection{Интегрирование заменой переменной}
+
+\begin{theorem}
+\textbf{Интегрирование заменой переменной} \\
+\textit{
+  $x = \phi(t)$ определена на промежутке $I_1$ и однозначно отображается на $I_2$ \\
+  $\phi'(t) \neq 0 \qquad \phi(t) \in I_2 \quad \forall t \in I_1$ \\
+  $y = f(x)$ определена на $I_2$
+}
+$$\int f(\phi(t))\phi'(t)\,dt = F(t) + C \implies \int f(x)\,dx = F(\phi^{-1}(x)) + C$$
+\end{theorem}
+\begin{corollary}
+$$sinx\,dx = -d(cosx) \qquad cosx\,dx = d(sinx)$$
+$$x\,dx = \frac{1}{2}\,d(x^2) \qquad x^2\,dx = \frac{1}{3}\,d(x^3)$$
+$$e^x\,dx = d(e^x)$$
+$$\frac{dx}{cos^2x} = d(tgx) \qquad \frac{dx}{sin^2x} = -d(ctgx)$$
+$$\frac{dx}{1 + x^2} = d(arctgx)$$
+$$\frac{dx}{\sqrt{1 - x^2}} = d(arcsinx)$$
+$$\int tgx\,dx = -ln|cosx| + C \qquad \int ctgx\,dx = ln|sinx| + C$$
+$$\int \frac{dx}{sinx} = ln\left|tg\frac{x}{2}\right| + C \qquad \int \frac{dx}{cosx} = ln\left|tg\frac{x}{2} + \frac{\pi}{4}\right| + C$$
+\end{corollary}
+
+\begin{eg}
+$
+  \fbox{$\displaystyle\int\sqrt{a^2 - x^2}\,dx$} = \left[
+  \begin{array}{l}
+  x = asint \\
+  dx = acost\,dt \\
+  -\frac{\pi}{2} \leqslant t \leqslant \frac{\pi}{2}
+  \end{array}
+  \right] = \displaystyle\int\sqrt{a^2 - a^2sin^2t}\,\cdot\,acost\,dt = a^2\int cos^2t\,dt = \fbox{$a^2\displaystyle\frac{1}{2}\left(\frac{1}{2}sin2t + t\right) + C$}
+$
+\end{eg}
+
+\subsection{Интегрирование по частям}
+
+\begin{theorem}
+\textbf{Интегрирование по частям} \\
+\textit{
+  $u, v$ диффиринцируемы на промежутке $I$ \\
+  $u'v$ имеет первообразную на $I$
+}
+$$\int u\,dv = uv - \int v\,du$$
+\end{theorem}
+\begin{proof}
+$(uv)' = u'v + uv'$
+$$d(uv) = (uv)'\,dx = (u'v + uv')\,dx = u'v\,dx + uv'\,dx = v\,du + u\,dv$$
+$$u\,dv = d(uv) - v\,du$$
+$$\int u\,dv = \int d(uv) - \int v\,du$$
+$$uv - \int v\,du$$
+\end{proof}
+
+\begin{eg}
+$
+  \fbox{$\displaystyle\int(3x + 5)e^{2x}\,dx$} = \left[
+  \begin{array}{ll}
+  u = 3x + 5 & du = 3\,dx \\
+  dv = e^{2x}\,dx & v = \displaystyle\int e^{2x}\,dx = \frac{1}{2}e^{2x}
+  \end{array}
+  \right] = (3x + 5)\frac{1}{2}e^{2x} - \displaystyle\int\frac{3}{2}e^{2x}\,dx = \fbox{$\displaystyle\frac{1}{2}(3x + 5)e^{2x} - \frac{3}{4}e^{2x} + C$}
+$
+\end{eg}

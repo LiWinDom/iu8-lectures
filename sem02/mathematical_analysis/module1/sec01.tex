@@ -1,0 +1,35 @@
+\section{Неопределённые интегралы и их свойства}
+
+\begin{definition}
+$F(x)$ \textbf{первообразная} для $f(x)$, если $F'(x) = f(x)$ \\
+\textit{$f(x), F(x)$ определены на промежутке $I$}
+\end{definition}
+
+\begin{theorem}
+$F(x)$ --  первообразная для $f(x)$, тогда $F(x) + C$ так же первообразная для $f(x)$
+\end{theorem}
+\begin{proof}
+Пусть $F(x), G(x)$ -- первообразные для $f(x)$ \\
+\textit{Рассмотрим $F(x) - G(x)$:}
+$$(F(x)- G(x))' = f(x) - f(x) = 0$$
+$$F(x) - G(x) = const$$
+$$F(x) + C = G(x)$$
+\end{proof}
+
+\begin{definition}
+\textbf{Интеграл} -- совокупность всех первообразных для $f(x)$ на одном промежутке
+$$\int f(x)\,dx = F(x) + C$$
+\end{definition}
+
+\begin{note}
+Любая непрерывная функция на промежутке имеет первообразную на этом промежутке
+\end{note}
+
+\subsection{Свойства}
+
+\begin{itemize}
+  \item $(\int f(x)\,dx)' = f(x) \qquad d(\int f(x)\,dx) = f(x)\,dx$
+  \item $\int dF(x) = F(x) + C$
+  \item $\int af(x)\,dx = a\int f(x)\,dx$
+  \item $\int (f(x) + g(x))\,dx = \int f(x)\,dx + \int g(x)\,dx$
+\end{itemize}
